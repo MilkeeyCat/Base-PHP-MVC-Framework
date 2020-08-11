@@ -1,5 +1,10 @@
-RewriteEngine On
+AddDefaultCharset utf-8
 
-AddDefaultCharset UTF-8
+RewriteEngine on
 
-RewriteRule ^(.*)$ /public/$1
+RewriteRule ^app/$ index.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php
